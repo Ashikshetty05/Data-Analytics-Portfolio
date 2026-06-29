@@ -43,22 +43,21 @@ By deploying the LLM locally, this architecture ensures **100% data privacy** an
 ├── database_ingestion.py          # SQLite Relational Storage Connection Script
 ├── process_sentiment.py           # Local Ollama/Gemma 2 Inference Engine Script
 ├── customer_sentiment.db          # Live Local SQLite Relational Database 
-├── cleaned_reviews_sample.csv      # Cleaned Data Sample File (Pre-AI)
+├── cleaned_reviews_sample.csv     # Cleaned Data Sample File (Pre-AI)
 ├── ai_analyzed_reviews_sample.csv # Final AI Output Dataset Asset (Post-AI)
 └── README.md                      # Production Documentation
 
-## 🚀 How to Run the System Locally
+🚀 How to Run the System Locally
+Step 1. Initialize the Local AI Model Environment:
+PowerShell
+ollama run gemma2:2b
 
-### Step 1.**Initialize the Local AI Model Environment:**
-   ```powershell
-   ollama run gemma2:2b
+Step 2. Execute the End-to-End Code Sequence:
+PowerShell
+python clean_data.py
+python process_sentiment.py
+python database_ingestion.py
 
-### Step 2. **Execute the End-to-End Code Sequence:**
-  ```powershell
-  python clean_data.py
-  python process_sentiment.py
-  python database_ingestion.py
-
-### Step 3. **Launch the Live Interface:**
-  ```powershell
-  streamlit run app.py
+Step 3. Launch the Live Interface:
+PowerShell
+streamlit run app.py
